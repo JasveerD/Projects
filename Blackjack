@@ -11,27 +11,29 @@ player_total = 0
 
 while dealer_total <= 21 and player_total <= 21:
 
-    dealer_total = dealer_total + random.randrange(1,11)
+    cmd = input('Enter Cmd: ').strip().lower()
+
+    if cmd == 'hit':
+        player_total = player_total + random.randrange(1, 11)
+        dealer_total = dealer_total + random.randrange(1, 11)
+        print(player_total)
+
+    if player_total > 21:
+        print("Dealer: " + str(dealer_total))
+        print('Player: ' + str(player_total))
+        print('Dealer Wins')
+        exit()
+
     if dealer_total > 21:
         print("Dealer: " + str(dealer_total))
         print('Player: ' + str(player_total))
         print("Player Wins")
         exit()
 
-    cmd = input('Enter Cmd: ').strip().lower()
-
-    if cmd == 'hit':
-        player_total = player_total + random.randrange(1, 11)
-        print(player_total)
-
-    if player_total > 21:
-        print("Dealer: " + str(dealer_total))
-        print('Player: ' + str(player_total))
-
     elif cmd == 'stop':
         break
 
-print(f"Player: {player_total}, Dealer: {dealer_total}")
+print('Player: ' + str(player_total) + '   ' + 'Dealer: ' + str(dealer_total))
 
 if player_total > dealer_total:
     print('Player Wins')
