@@ -22,10 +22,10 @@ print('Download: (h)ighest  |  (l)owest  |  (a)udio  |  (e)xit')
 download_choice = input('Choice: ')
 
 if download_choice == 'h':
-    video_object.streams.get_highest_resolution().download('/Users/jasveerdhillon/Desktop')
+    video_object.streams.get_highest_resolution().download()
 
 elif download_choice == 'l':
-    video_object.streams.get_lowest_resolution().download('/Users/jasveerdhillon/Desktop')
+    video_object.streams.get_lowest_resolution().download()
 
 elif download_choice == 'a':
-    video_object.streams.get_audio_only().download('/Users/jasveerdhillon/Desktop')
+    video_object.streams.get_audio_only().download()
