@@ -5,7 +5,7 @@ def on_complete(stream, filepath):
     print(filepath)
 
 def on_progress(stream, chunk, bytes_remaining):
-    progress_string = f('{100 - round(bytes_remaining / stream.filesize * 100,2)}%')
+    progress_string = f'{round(100 - (bytes_remaining / stream.filesize * 100), 2)}%'
     print(progress_string)
 
 link = input('YouTube link: ')
